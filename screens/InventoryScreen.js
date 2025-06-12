@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Modal, Pressable } from 'react-native';
 //import YarnManager from '../components/YarnManager';
 import AddYarnScreen from './AddYarnScreen';
+import colors from '../styles/colors';
 
 export default function InventoryScreen() {
   const [activeTab, setActiveTab] = useState('Garn');
@@ -18,7 +19,7 @@ export default function InventoryScreen() {
       return <Text style={styles.contentText}>Diagrammer</Text>;
     }
   };
-  
+
   //Fullskjerm for "legg til garn"-side
   if (modalType === 'Garn') {
     return (
@@ -53,7 +54,7 @@ export default function InventoryScreen() {
         </View>
       </View>
 
-      /*Legg til-knapp*/
+      {/*Legg til-knapp*/}
       <View style={styles.contentContainer}>{renderTabContent()}</View>
       <View style={styles.bottomContainer}>
         <TouchableOpacity style={styles.addButton} 
@@ -117,13 +118,14 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   tabWrapper: { marginBottom: 16 },
+
   tabBackground: {
     flexDirection: 'row',
-    backgroundColor: '#C2CDFF',
+    backgroundColor: colors.lightBlue,
     padding: 4,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#9CA2FA',
+    borderColor: colors.mediumBlue,
   },
   tabButton: {
     flex: 1,
@@ -136,7 +138,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   tabText: {
-    color: '#424790',
+    color: colors.darkBlue,
     fontSize: 16,
     fontWeight: '500',
   },
@@ -156,11 +158,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   addButton: {
-    backgroundColor: '#424790',
+    backgroundColor: colors.darkBlue,
     width: 60,
     height: 60,
     borderRadius: 30,
-    borderColor: '#2C317E',
+    borderColor: colors.darkBlueBorder,
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -169,13 +171,13 @@ const styles = StyleSheet.create({
   plusVertical: {
     width: 2.5,
     height: 20,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     position: 'absolute'
   },
   plusHorizontal: {
     width: 20,
     height: 2.5,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     position: 'absolute'
   },
   modalOverlay: {
@@ -184,7 +186,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end' 
   },
   modalBox: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     padding: 24,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
@@ -195,7 +197,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '600',
     marginBottom: 12,
-    color: '#424790'
+    color: colors.darkBlue
   },
   modalOption: {
     paddingVertical: 12,

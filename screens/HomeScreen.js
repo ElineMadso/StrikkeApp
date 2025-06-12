@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Velkommen til Skredderappen 🧶</Text>
+      <Text style={styles.text}>Velkommen til Strikkeappen 🧶</Text>
     </View>
   );
 }
